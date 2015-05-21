@@ -1,0 +1,20 @@
+{
+	"pluginId": "vs.language.swift",
+	"activationEvents": ["textModel:swift"],
+	"mainModule": "./swiftMain",
+	"contributes": {
+		"language": [{
+			"id": "swift",
+			"extensions": [ ".swift" ],
+			"aliases": [ "Swift", "swift" ],
+            "mimetypes": ["text/swift"]
+		}]
+	},
+	"scripts": {
+		"compile": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../gulpfile.js compile --dir vs.language.csharp"
+	},
+	"_testing": "./tests/swiftTests",
+	"_bundling": [
+		{ "name": "./swiftMain" }
+	]
+}

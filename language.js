@@ -1,5 +1,5 @@
 /*---------------------------------------------------------
- * Copyright (C) Microsoft Corporation. All rights reserved.
+ * Copyright (C) David Owens II, owensd.io. All rights reserved.
  *--------------------------------------------------------*/
 /// <reference path="../declares.d.ts" />
 'use strict';

@@ -3,11 +3,10 @@
  *--------------------------------------------------------*/
 /// <reference path="../declares.d.ts" />
 'use strict';
-define(["require", "exports", 'monaco', './language', './features/comments'], function (require, exports, monaco, spec, CommentsSupport) {
+define(["require", "exports", 'monaco', './language'], function (require, exports, monaco, spec) {
     
     function activate(_ctx) {
         var MODE_ID = 'swift';
-        var MY_PLUGIN_ID = 'vs.language.swift';
         
         var ctx = {
             modelService: _ctx.modelService,
@@ -15,8 +14,7 @@ define(["require", "exports", 'monaco', './language', './features/comments'], fu
             configurationService: _ctx.configurationService
         };
 
-        //monaco.Modes.registerMonarchDefinition(MODE_ID, spec.language);
-        monaco.Modes.CommentsSupport.register(MODE_ID, new CommentsSupport());
+        monaco.Modes.registerMonarchDefinition(MODE_ID, spec.language);
       
         // Provides auto-completion of the closing items.
         monaco.Modes.ElectricCharacterSupport.register(MODE_ID, {

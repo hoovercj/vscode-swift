@@ -117,7 +117,13 @@ define(["require", "exports"], function (require, exports) {
             ],
             
             keyword: [
+                [ /`/, { token: 'keyword.operator', bracket: '@open', next: '@escapedkeyword' } ],
                 [ /@identifier/, { cases: { '@keywords': 'keyword', '@default': '' } } ]
+            ],
+            
+            escapedkeyword: [
+                [ /`/, { token: 'keyword.operator', bracket: '@close', next: '@pop' } ],
+                [ /./, '' ]
             ],
             
             symbol: [

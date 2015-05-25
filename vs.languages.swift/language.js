@@ -52,6 +52,10 @@ define(["require", "exports"], function (require, exports) {
         
         // TODO(owensd): Support unicode symbols.
         symbols: /[=(){}\[\].,:;@#\_&\-<>`?!+*\\\/]/,
+        
+        operatorstart: /[\/=\-+!*%<>&|^~?\u00A1-\u00A7\u00A9\u00AB\u00AC\u00AE\u00B0-\u00B1\u00B6\u00BB\u00BF\u00D7\u00F7\u2016-\u2017\u2020-\u2027\u2030-\u203E\u2041-\u2053\u2055-\u205E\u2190-\u23FF\u2500-\u2775\u2794-\u2BFF\u2E00-\u2E7F\u3001-\u3003\u3008-\u3030]/,
+        operatorend: /[\u0300-\u036F\u1DC0-\u1DFF\u20D0-\u20FF\uFE00-\uFE0F\uFE20-\uFE2F\uE0100-\uE01EF]/,
+        operators: /(@operatorstart)((@operatorstart)|(@operatorend))*/,
 
         // TODO(owensd): These are borrowed from C#; need to validate correctness for Swift.
         escapes: /\\(?:[abfnrtv\\"']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
@@ -117,7 +121,8 @@ define(["require", "exports"], function (require, exports) {
             ],
             
             symbol: [
-                [ /@symbols/, 'keyword.operator' ]
+                [ /@symbols/, 'keyword.operator' ],
+                [ /@operators/, 'keyword.operator' ]
             ]
         }
     };

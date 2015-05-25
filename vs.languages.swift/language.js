@@ -34,10 +34,10 @@ define(["require", "exports"], function (require, exports) {
         // TODO(owensd): Support the full range of unicode valid identifiers.
         identifier: /[a-zA-Z_]\w*/,
         
-        // TODO(owensd): Support the @availability macro.
+        // TODO(owensd): Support the @availability macro properly.
         attributes: [
             '@autoclosure', '@noescape', '@noreturn', '@NSApplicationMain', '@NSCopying', '@NSManaged',
-            '@objc', '@UIApplicationMain', '@noreturn'
+            '@objc', '@UIApplicationMain', '@noreturn', '@availability'
         ],
         accessmodifiers: [ 'public', 'private', 'internal' ],
         keywords: [
@@ -50,7 +50,6 @@ define(["require", "exports"], function (require, exports) {
             'Type', 'typealias', 'unowned', 'var', 'weak', 'where', 'while', 'willSet', 'FALSE', 'TRUE'
         ],
         
-        // TODO(owensd): Support unicode symbols.
         symbols: /[=(){}\[\].,:;@#\_&\-<>`?!+*\\\/]/,
         
         operatorstart: /[\/=\-+!*%<>&|^~?\u00A1-\u00A7\u00A9\u00AB\u00AC\u00AE\u00B0-\u00B1\u00B6\u00BB\u00BF\u00D7\u00F7\u2016-\u2017\u2020-\u2027\u2030-\u203E\u2041-\u2053\u2055-\u205E\u2190-\u23FF\u2500-\u2775\u2794-\u2BFF\u2E00-\u2E7F\u3001-\u3003\u3008-\u3030]/,
@@ -68,7 +67,6 @@ define(["require", "exports"], function (require, exports) {
                 { include: '@keyword' },
                 { include: '@symbol' }
             ],
-            // TODO: Support parameter name highlighting for doc comments.
             comment: [
                 [ /\/\/\/.*$/, 'comment.doc' ],
                 [ /\/\*\*/, 'comment.doc', '@commentdocbody' ],

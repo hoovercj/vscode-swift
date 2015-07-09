@@ -27,13 +27,13 @@ define(["require", "exports"], function (require, exports) {
         ],
         accessmodifiers: ['public', 'private', 'internal'],
         keywords: [
-            '__COLUMN__', '__FILE__', '__FUNCTION__', '__LINE__', 'as', 'associativity', 'break', 'case',
+            '__COLUMN__', '__FILE__', '__FUNCTION__', '__LINE__', 'as', 'as!', 'as?', 'associativity', 'break', 'case', 'catch',
             'class', 'continue', 'convenience', 'default', 'deinit', 'didSet', 'do', 'dynamic', 'dynamicType',
-            'else', 'enum', 'extension', 'fallthrough', 'final', 'for', 'func', 'get', 'if', 'import', 'in', 'infix',
+            'else', 'enum', 'extension', 'fallthrough', 'final', 'for', 'func', 'get', 'guard', 'if', 'import', 'in', 'infix',
             'init', 'inout', 'internal', 'is', 'lazy', 'left', 'let', 'mutating', 'nil', 'none', 'nonmutating', 'operator',
             'optional', 'override', 'postfix', 'precedence', 'prefix', 'private', 'protocol', 'Protocol', 'public',
-            'required', 'return', 'right', 'self', 'Self', 'set', 'static', 'struct', 'subscript', 'super', 'switch',
-            'Type', 'typealias', 'unowned', 'var', 'weak', 'where', 'while', 'willSet', 'FALSE', 'TRUE'
+            'repeat', 'required', 'return', 'right', 'self', 'Self', 'set', 'static', 'struct', 'subscript', 'super', 'switch',
+            'throw', 'throws', 'try', 'try!', 'Type', 'typealias', 'unowned', 'var', 'weak', 'where', 'while', 'willSet', 'FALSE', 'TRUE'
         ],
 
         symbols: /[=(){}\[\].,:;@#\_&\-<>`?!+*\\\/]/,

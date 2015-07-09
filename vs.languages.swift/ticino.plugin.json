@@ -1,7 +1,7 @@
 {
 	"pluginId": "vs.language.swift",
 	"activationEvents": ["textModel:swift"],
-	"mainModule": "./main",
+	"mainModule": "./swiftMain",
 	"scripts": {
 		"compile": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../gulpfile.js compile --dir vs.language.swift"
 	},
@@ -11,17 +11,9 @@
 			"aliases": ["Swift","swift"],
 			"extensions": [".swift"],
 			"mimetypes": ["text/swift"]
-		}],
-		"configuration": {
-			"type": "object",
-			"title": "Swift configuration",
-			"properties": {
-				"typescript.useCodeSnippetsOnMethodSuggest": {
-					"type": "boolean",
-					"default": false,
-					"description": "Complete functions with their parameter signature."
-				}
-			}
-		}
-	}
+		}]
+	},
+	"_bundling": [
+		{ "name": "./swiftMain" }
+	]
 }
